@@ -11,6 +11,7 @@ client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_API_KEY)
 database = client.API_DB
 collection_todo = database.todo
 collection_user = database.user
+auth = AuthJwtCsrf()
 
 
 def todo_serializer(todo) -> dict:
