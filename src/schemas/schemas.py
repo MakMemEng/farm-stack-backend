@@ -8,6 +8,7 @@ CSRF_KEY = config('CSRF_KEY')
 class CsrfSettings(BaseModel):
   secret_key: str = CSRF_KEY
   cookie_samesite: str = "none"
+  cookie_secure:bool = True
 
 
 class Todo(BaseModel):

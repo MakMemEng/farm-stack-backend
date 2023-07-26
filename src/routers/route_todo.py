@@ -1,12 +1,12 @@
 from fastapi import APIRouter
 from fastapi import Request, Response, HTTPException, Depends
 from fastapi.encoders import jsonable_encoder
-from src.schemas import Todo, TodoBody, SuccessMsg
-from src.database import db_create_todo, db_get_todos, db_get_single_todo, db_update_todo, db_delete_todo
+from src.schemas.schemas import Todo, TodoBody, SuccessMsg
+from src.database.database import db_create_todo, db_get_todos, db_get_single_todo, db_update_todo, db_delete_todo
 from starlette.status import HTTP_201_CREATED
 from typing import List
 from fastapi_csrf_protect import CsrfProtect
-from src.auth_utils import AuthJwtCsrf
+from src.services.auth_utils import AuthJwtCsrf
 
 router = APIRouter()
 auth = AuthJwtCsrf()
